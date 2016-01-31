@@ -1,9 +1,10 @@
 var mongoose = require('mongoose');
+var dbConfig = require('../../config/database.json');
 
 var studentDatabase = function () {
 
     // connect to mongodb
-    var conn = mongoose.createConnection('mongodb://root:root123@ds037155.mongolab.com:37155/studentapp');
+    var conn = mongoose.createConnection(dbConfig.dbUrl);
 
     // schema definition
     var Schema = mongoose.Schema,
